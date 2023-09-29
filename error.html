@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Error Popup Example</title>
+    <style>
+        .error-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 15px;
+            box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.66);
+            text-align: center;
+        }
+
+        .error-popup .icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .error-popup .heading {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .error-popup .message {
+            margin-bottom: 20px;
+        }
+
+        .error-popup .exit-button {
+            padding: 10px 20px;
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="error-button">Click Me</button>
+
+    <div id="error-popup" class="error-popup">
+        <div class="icon">⚠️</div>
+        <div class="heading">Error</div>
+        <div class="message">An error has occurred.</div>
+        <button id="exit-button" class="exit-button">Exit</button>
+    </div>
+
+    <script>
+        document.getElementById("error-button").addEventListener("click", function() {
+            document.getElementById("error-popup").style.display = "block";
+        });
+
+        document.getElementById("exit-button").addEventListener("click", function() {
+            document.getElementById("error-popup").style.display = "none";
+        });
+    </script>
+</body>
+</html>

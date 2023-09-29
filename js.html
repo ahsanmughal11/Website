@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="responsive.css">
+<script>
+$(document).ready(function(){
+  $("#menu-bars").click(function(){
+    $("#resmenu").show();
+  });
+  $("#show").click(function(){
+    $("p").show();
+  });
+});
+</script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div id="logo-container">
+        <img src="/Images/logo-icon.png" alt="Logo" class="logo">
+      <h1>Star Software</h1>
+    </div>
+    <button id="menu-bars"><i class="fa-solid fa-bars"></i></button>
+      <nav>
+        <ul id="resmenu">
+          <li><a href="index.html" class="menuactive">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="service.html">Service</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="join.html">Join Us</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+    </div>
+  </header>
+<p>If you click on the "Hide" button, I will disappear.</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+</body>
+</html>

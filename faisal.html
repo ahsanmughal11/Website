@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+
+#main-container{
+   position: relative;
+   width: 100%; 
+   padding-bottom: 40px;
+   overflow: hidden;
+   border: solid red;
+}
+#slider{
+    font-size: 20px;
+    /* padding-top: 20px; */
+    width: 100%;
+    height: 500px;
+    display: inline-flex;
+    transform: translate(-100%);
+    transition: 0.7s;
+    /* border: solid yellow; */
+}
+#slider img{
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    /* margin-top: 50px ; */
+    /* border-radius: 50%; */
+}
+
+
+#slider #full{
+    width: 1260px;
+    display: block;
+}
+#indicators{
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    transform: translate(-50%);
+}
+#indicators span{
+    background-color: aquamarine;
+    display: inline-block;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+.active{
+    background-color: rgba(210, 105, 30, 0.861) !important;
+    
+}
+    </style>
+</head>
+<body>
+    <div id="main-container">
+
+        <div id="slider">
+            <div>
+                <span id="full"></span>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis dolore impedit ea iste hic pariatur consectetur labore ex perferendis excepturi!</p>
+                <img src="Images/background1.jpg" alt="Story Writer" >
+                <h1>Jon Welch</h1>
+            </div>
+
+            <div>
+                <span id="full"></span>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis dolore impedit ea iste hic pariatur consectetur labore ex perferendis excepturi!</p>
+                <img src="Images/background2.jpg" alt="Story Writer">
+                <h1>Jesse Shand</h1>
+            </div>
+           
+            <div>
+                <span id="full"></span>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Corporis dolore impedit ea iste hic pariatur consectetur labore ex perferendis excepturi!</p>
+                <img src="Images/background4.jpg" alt="Story Writer" >
+                <h1>Pete Crawford</h1>
+            </div>
+        </div>
+        <div id="indicators">
+            <span id="btn1" ></span>
+            <span id="btn2" class="active"></span>
+            <span id="btn3"></span>
+        </div>
+    </div>
+
+
+    <script>
+        var slider = document.getElementById("slider");
+        var btn1 = document.getElementById("btn1");
+        var btn2 = document.getElementById("btn2");
+        var btn3 = document.getElementById("btn3");
+        btn1.onclick= function(){
+            slider.style.transform = "translateX(0%)";
+            btn1.classList.add("active");
+            btn2.classList.remove("active");
+            btn3.classList.remove("active");
+        }
+        btn2.onclick= function(){
+            slider.style.transform = "translateX(-100%)";
+            btn1.classList.remove("active");
+            btn2.classList.add("active");
+            btn3.classList.remove("active");
+        }
+        btn3.onclick= function(){
+            slider.style.transform = "translateX(-200%)";
+            btn1.classList.remove("active");
+            btn2.classList.remove("active");
+            btn3.classList.add("active");
+        }
+    </script>
+</body>
+</html>
